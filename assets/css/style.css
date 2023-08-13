@@ -22,16 +22,17 @@
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: 1000px;
+    object-fit: cover;
     height: 100vh;
     position: relative;
-    width:100%;
+    width:100vw;
 }
 
 .tag-line {
-    position: absolute;
-    top: 30%;
-    left: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-top:30vh;
 }
 
 .headline {
@@ -62,10 +63,14 @@ main {
 }
 
 #about {
-    height: 500px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.services {
+  height: 100%;
 }
 
 .project-gallery {
@@ -74,7 +79,7 @@ main {
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 400px;
+    min-height: 400px;
 }
 
 div.gallery {
@@ -82,6 +87,7 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 20%;
+    min-width: 200px;
     height: 200px;
   }
   
