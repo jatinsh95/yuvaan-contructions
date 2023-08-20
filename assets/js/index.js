@@ -1,6 +1,6 @@
-$("#sec-home").addClass("active");
+$(".sec-home").addClass("active");
 
-$("#sec-home").click(function () {
+$(".sec-home").click(function () {
   $(".nav-wrapper ul li").children().removeClass("active");
   $(this).addClass("active");
   $("html, body").animate(
@@ -12,7 +12,7 @@ $("#sec-home").click(function () {
   return false;
 });
 
-$("#sec-about").click(function () {
+$(".sec-about").click(function () {
   $(".nav-wrapper ul li").children().removeClass("active");
   $(this).addClass("active");
   $("html, body").animate(
@@ -24,7 +24,7 @@ $("#sec-about").click(function () {
   return false;
 });
 
-$("#sec-projects").click(function () {
+$(".sec-projects").click(function () {
   $(".nav-wrapper ul li").children().removeClass("active");
   $(this).addClass("active");
   $(" html,body").animate(
@@ -36,7 +36,7 @@ $("#sec-projects").click(function () {
   return false;
 });
 
-$("#sec-contact").click(function () {
+$(".sec-contact").click(function () {
   $(".nav-wrapper ul li").children().removeClass("active");
   $(this).addClass("active");
   $("html,body ").animate(
@@ -51,7 +51,7 @@ $("#sec-contact").click(function () {
 $("#about").waypoint(
   function () {
     $(".nav-wrapper ul li").children().removeClass("active");
-    $("#sec-about").addClass("active");
+    $(".sec-about").addClass("active");
   },
   { offset: 64 }
 );
@@ -59,7 +59,7 @@ $("#about").waypoint(
 $("#projects").waypoint(
   function () {
     $(".nav-wrapper ul li").children().removeClass("active");
-    $("#sec-projects").addClass("active");
+    $(".sec-projects").addClass("active");
   },
   { offset: "40%" }
 );
@@ -67,7 +67,7 @@ $("#projects").waypoint(
 $("#contact").waypoint(
   function () {
     $(".nav-wrapper ul li").children().removeClass("active");
-    $("#sec-contact").addClass("active");
+    $(".sec-contact").addClass("active");
   },
   { offset: "70%" }
 );
@@ -75,7 +75,22 @@ $("#contact").waypoint(
 $("#home").waypoint(
   function () {
     $(".nav-wrapper ul li").children().removeClass("active");
-    $("#sec-home").addClass("active");
+    $(".sec-home").addClass("active");
   },
   { offset: -64 }
 );
+
+var navIcon = true;
+function toggleNav(){
+  if(this.navIcon == true){
+    this.navIcon = false;
+    document.getElementById("nav-open").classList.add("hide");
+    document.getElementById("nav-close").classList.remove("hide")
+    document.getElementById("nav-items").classList.remove("hide");
+  }else{
+    this.navIcon = true;
+    document.getElementById("nav-close").classList.add("hide");
+    document.getElementById("nav-open").classList.remove("hide")
+    document.getElementById("nav-items").classList.add("hide");
+  }
+}

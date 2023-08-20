@@ -15,19 +15,26 @@
     />
   </head>
   <body>
-    <nav class="nav">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo"
-          ><img src="./assets/images/logo.jpeg" class="logo-img"
-        /></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a id="sec-home" href="#home">Home</a></li>
-          <li><a id="sec-about" href="#about">About</a></li>
-          <li><a id="sec-projects" href="#projects">Projects</a></li>
-          <li><a id="sec-contact" href="#contact">Contact</a></li>
+    <div class="navbar">
+      <div class="nav-desktop nav-wrapper">
+        <ul class="right">
+          <li><a class="sec-home" href="#home">Home</a></li>
+          <li><a class="sec-about" href="#about">About</a></li>
+          <li><a class="sec-projects" href="#projects">Projects</a></li>
+          <li><a class="sec-contact" href="#contact">Contact</a></li>
         </ul>
       </div>
-    </nav>
+      <div class="nav-mobile nav-wrapper">
+        <i id="nav-open" class="left fa fa-navicon" onclick="toggleNav(this)"></i>
+        <i id="nav-close" class="hide left fa fa-close" onclick="toggleNav(this)"></i>
+        <ul id="nav-items" class="hide clear center">
+          <li><a class="sec-home" onclick="toggleNav(this)" href="#home">Home</a></li>
+          <li><a class="sec-about" onclick="toggleNav(this)" href="#about">About</a></li>
+          <li><a class="sec-projects" onclick="toggleNav(this)" href="#projects">Projects</a></li>
+          <li><a class="sec-contact" onclick="toggleNav(this)" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     <div id="home" class="bg-img default first">
       <div class="tag-line white-text col">
         <div class="headline">
