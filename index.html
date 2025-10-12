@@ -1,174 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yuvaan Constructions & Interiors</title>
+  <meta name="description" content="Yuvaan Constructions & Interiors — premium construction and interior solutions across residential & commercial projects." />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- ===== Header / Nav ===== -->
+  <header class="header">
+    <div class="container header__row">
+      <a href="#" class="brand" aria-label="Yuvaan Constructions Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 10.5L12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 19.5v-9Z"/><path fill="currentColor" d="M9 21v-6h6v6z"/></svg>
+        <span>Yuvaan Constructions</span>
+      </a>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <div class="navbar">
-      <div class="nav-desktop nav-wrapper">
-        <ul class="right">
-          <li><a class="sec-home" href="#home">Home</a></li>
-          <li><a class="sec-about" href="#about">About</a></li>
-          <li><a class="sec-projects" href="#projects">Projects</a></li>
-          <li><a class="sec-contact" href="#contact">Contact</a></li>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="nav__menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#footer-contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">We build spaces that <span class="accent">elevate</span> life.</h1>
+        <p class="hero__subtitle">Construction • Interiors • Renovations — quality craftsmanship, sustainable materials, and on-time delivery.</p>
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+      </div>
+    </div>
+    <div class="hero__bg"></div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section about">
+    <div class="container about__grid">
+      <div class="about__copy reveal">
+        <div class="about__tag">About Us</div>
+        <h2>Crafting durable, delightful & efficient spaces.</h2>
+        <p>
+          At <strong>Yuvaan Constructions & Interiors</strong>, we merge engineering rigour with interior sensibilities.
+          From concept to handover, we collaborate closely with clients to translate vision into precise execution.
+        </p>
+        <div class="about__stats">
+          <div class="stat">
+            <div class="stat__num" data-count="125">0</div>
+            <div class="stat__label">Projects Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="35">0</div>
+            <div class="stat__label">Interior Makeovers</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="12">0</div>
+            <div class="stat__label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__card reveal">
+        <div class="about__image">
+          <img src="https://picsum.photos/seed/yuvaan-about/900/700" alt="Team collaborating on a site plan" loading="lazy" />
+        </div>
+        <ul class="about__timeline">
+          <li><span>Discovery</span> — needs, budget, feasibility</li>
+          <li><span>Design</span> — drawings, materials, approvals</li>
+          <li><span>Build</span> — site execution with QA</li>
+          <li><span>Delivery</span> — snag-free handover</li>
         </ul>
       </div>
-      <div class="nav-mobile nav-wrapper">
-        <i id="nav-open" class="left fa fa-navicon" onclick="toggleNav(this)"></i>
-        <i id="nav-close" class="hide left fa fa-close" onclick="toggleNav(this)"></i>
-        <ul id="nav-items" class="hide clear center">
-          <li><a class="sec-home" onclick="toggleNav(this)" href="#home">Home</a></li>
-          <li><a class="sec-about" onclick="toggleNav(this)" href="#about">About</a></li>
-          <li><a class="sec-projects" onclick="toggleNav(this)" href="#projects">Projects</a></li>
-          <li><a class="sec-contact" onclick="toggleNav(this)" href="#contact">Contact</a></li>
-        </ul>
-      </div>
     </div>
 
-    <!-- Hero Section -->
-    <div id="home" class="bg-img default first">
-      <div class="slideshow-container">
-        <div class="slide fade">
-          <img src="./assets/images/background-1.jpg" />
-        </div>
-        <div class="slide fade">
-          <img src="./assets/images/background-2.jpg" />
-        </div>
-        <div class="slide fade">
-          <img src="./assets/images/background-3.jpg" />
-        </div>
-      </div>
-      <div class="headline-container">
-        <div class="tag-line white-text col">
-          <div class="headline">
-            <span class="white-text">Welcome To</span><br />
-            <span class="company-name">YUVAAN CONSTRUCTIONS</span>
-          </div>
-        </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Residential • Commercial • Luxury Interiors • Renovations • Turnkey • </span>
+        <span>Residential • Commercial • Luxury Interiors • Renovations • Turnkey • </span>
       </div>
     </div>
+  </section>
 
-    <!-- About Section -->
-    <div id="about" class="item">
-      <div class="services center row">
-        <div class="col s12">
-          <h5>MAIN SERVICES</h5>
-          <hr style="width: 10%; border-color: yellow" />
+  <!-- ===== Projects / Gallery ===== -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <div class="section__tag">Portfolio</div>
+          <h2>Featured Projects</h2>
         </div>
-        <div class="col s12 m6 l4">
-          <h5>RESIDENTIAL PROJECTS</h5>
-          <p>We have delivered turnkey projects for multiple residential towers and row houses in Delhi-NCR</p>
-        </div>
-        <div class="col s12 m6 l4">
-          <h5>COMMERCIAL PROJECTS</h5>
-          <p>Carrying out end-to-end RCC works for multiple commercial towers and retail outlets in Delhi-NCR</p>
-        </div>
-        <div class="col s12 m6 l4">
-          <h5>ELECTRICAL WORKS</h5>
-          <p>Our professional team has exceptionally carried out electrical works for all the retail and residential projects</p>
-        </div>
-        <div class="col s12 m6 l4">
-          <h5>RETAIL & INTERIOR FIT-OUT</h5>
-          <p>Operating since 2018, we have undertaken and delivered retail projects across the country as per client expectations</p>
-        </div>
-        <div class="col s12 m6 l4">
-          <h5>MODULAR FURNITURE</h5>
-          <p>High quality of our woodwork and furniture has always caught praises from the clients</p>
-        </div>
-        <div class="col s12 m6 l4">
-          <h5>WATERPROOFING WORKS</h5>
-          <p>Our team provides the best waterproofing solutions unique for every project which protects the structure for years</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Projects Section -->
-    <div id="projects" class="project-gallery item">
-      <div style="width: 100%">
-        <h5>PROJECTS</h5>
-        <hr style="width: 10%; border-color: yellow" />
-      </div>
-
-      <div class="gallery" id="gallery_1">
-        <img src="./assets/images/project_1_1.jpeg" />
-        <img src="./assets/images/project_1_2.jpeg" />
-        <div id="desc_1">
-          <div class="desc">
-            OFFICE INTERIOR Commercial Project Area: 525 ft<sup>2</sup><br />
-            Location: Galaxy Blue Sapphire Plaza, Sector-4, Greater Noida
-          </div>
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-filter="residential" role="tab">Residential</button>
+          <button class="filter" data-filter="commercial" role="tab">Commercial</button>
+          <button class="filter" data-filter="interior" role="tab">Interiors</button>
         </div>
       </div>
 
-      <div class="gallery" id="gallery_2">
-        <img src="./assets/images/project_2_1.jpeg" />
-        <img src="./assets/images/project_2_2.jpeg" />
-        <div id="desc_2">
-          <div class="desc">
-            ELITE HOMZ TILE & FAÇADE REPAIR WORK Residential Project<br />
-            Location: Sector-77, Noida, Uttar Pradesh
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery" id="gallery_3">
-        <img src="./assets/images/project_3_1.jpeg" />
-        <img src="./assets/images/project_3_2.jpeg" />
-        <div id="desc_3">
-          <div class="desc">
-            WOODLAND SHOP INTERIOR WORK Commercial Project Area: 905 ft<sup>2</sup><br />
-            Location: City Centre Mall, Gurugram, Haryana
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer id="contact" class="page-footer item" style="background-color: #1a1a1a">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <img src="./assets/images/logo.jpeg" class="footer-logo" />
-            <p class="grey-text text-lighten-4">YUVAAN CONSTRUCTIONS</p>
-          </div>
-
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Follow us on</h5>
-            <div>
-              <a class="fa fa-twitter" href="#!"></a>
-              <a class="fa fa-instagram" href="https://instagram.com/yuvaan_constructions?igshid=OGQ5ZDc2ODk2ZA=="></a>
-              <a class="fa fa-linkedin" href="#!"></a>
+      <div class="grid" id="gallery">
+        <!-- Cards -->
+        <article class="card reveal" data-cat="residential">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/house1/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/house1/800/600" alt="Contemporary residence façade" loading="lazy" />
+            <div class="card__overlay">
+              <h3>Skyline Residence</h3>
+              <p>Residential • 5,000 sq.ft</p>
             </div>
-          </div>
+          </button>
+        </article>
 
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Contact us on</h5>
-            <h6 class="white-text">Email Id : support@yuvaanconstructions.com</h6>
-            <h6 class="white-text">Ph.no : 9718800352, 8076895046</h6>
-          </div>
+        <article class="card reveal" data-cat="commercial">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/office1/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/office1/800/600" alt="Minimal commercial lobby" loading="lazy" />
+            <div class="card__overlay">
+              <h3>Vertex Tower Lobby</h3>
+              <p>Commercial • Lobby & Shell</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card reveal" data-cat="interior">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/interior1/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/interior1/800/600" alt="Warm living room interior" loading="lazy" />
+            <div class="card__overlay">
+              <h3>The Warm Loft</h3>
+              <p>Interiors • Living & Kitchen</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card reveal" data-cat="commercial">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/showroom/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/showroom/800/600" alt="Showroom with bold lighting" loading="lazy" />
+            <div class="card__overlay">
+              <h3>Arc Showroom</h3>
+              <p>Commercial • Fit-out</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card reveal" data-cat="residential">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/villa/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/villa/800/600" alt="Modern villa pool side" loading="lazy" />
+            <div class="card__overlay">
+              <h3>Azure Villa</h3>
+              <p>Residential • Exterior & Pool</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card reveal" data-cat="interior">
+          <button class="card__inner" data-lightbox="https://picsum.photos/seed/kitchen/1600/1100" aria-label="Open project image">
+            <img src="https://picsum.photos/seed/kitchen/800/600" alt="Sleek kitchen interior" loading="lazy" />
+            <div class="card__overlay">
+              <h3>Mono Kitchen</h3>
+              <p>Interiors • Modular Kitchen</p>
+            </div>
+          </button>
+        </article>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Project image viewer">
+      <button class="lightbox__close" aria-label="Close">×</button>
+      <img class="lightbox__img" alt="" />
+    </div>
+  </section>
+
+  <!-- ===== Location / Map ===== -->
+  <section id="location" class="section location">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <div class="section__tag">Visit Us</div>
+          <h2>Our Location</h2>
+          <p>Come by our studio for a coffee and walkthrough of materials and mockups.</p>
         </div>
       </div>
-    </footer>
+      <div class="map-wrap reveal">
+        <!-- Update data-lat / data-lng for precise coordinates -->
+        <div id="map" class="map" data-lat="28.6139" data-lng="77.2090" data-zoom="12" aria-label="Company location map"></div>
+        <address class="address">
+          <strong>Yuvaan Constructions & Interiors</strong><br />
+          221B, Main Boulevard, Connaught Place<br />
+          New Delhi, 110001, India
+        </address>
+      </div>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
-    <script src="./assets/js/index.js" type="text/javascript"></script>
-  </body>
+  <!-- ===== Footer / Netlify Form ===== -->
+  <footer id="footer-contact" class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--small" href="#" aria-label="Yuvaan Constructions Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 10.5L12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 19.5v-9Z"/><path fill="currentColor" d="M9 21v-6h6v6z"/></svg>
+          <span>Yuvaan Constructions</span>
+        </a>
+        <p>Design-first construction with transparent execution.</p>
+
+        <div class="social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3M18 6.6a1 1 0 1 1-1 1a1 1 0 0 1 1-1Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-1.6 19.9V14H8v-3h2.4V9.1c0-2.4 1.4-3.7 3.5-3.7c1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.5.7-1.5 1.4V11H16l-.4 3h-2v7A10 10 0 0 0 12 2Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3a2.94 2.94 0 0 1 3 2.88V21h-4.5v-6.88c0-1.64-.62-2.76-2-2.76c-1.1 0-1.75.74-2.04 1.45c-.1.25-.13.61-.13.97V21H8.4s.06-12.67 0-14h4.93v2h-.03A4.5 4.5 0 0 1 17.5 7c2.27 0 4 1.48 4 4.67V21H19zm-14 0H1v18h4V3zM3 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Netlify form lives in the footer -->
+      <form name="footer-contact" class="form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="footer-contact" />
+        <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+        <h3 class="form__title">Let’s talk about your project</h3>
+
+        <div class="form__row">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+
+        <div class="form__row">
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" />
+          </label>
+          <label>
+            <span>Project Type</span>
+            <select name="type">
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Interiors">Interiors</option>
+              <option value="Renovation">Renovation</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form__full">
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary">Send Message</button>
+      </form>
+    </div>
+
+    <div class="footer__bar">
+      <div class="container footer__bar__row">
+        <small>© <span id="year"></span> Yuvaan Constructions & Interiors. All rights reserved.</small>
+        <a class="footer__mail" href="mailto:info@yuvaanconstructions.com">info@yuvaanconstructions.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
+  <script src="assets/js/app.js"></script>
+</body>
 </html>
