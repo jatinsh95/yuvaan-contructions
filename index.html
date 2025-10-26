@@ -106,45 +106,23 @@
         </div>
       </div>
 
-      <div class="grid" id="gallery">
-        <!-- Cards -->
-        <article class="card reveal" data-cat="commercial">
-          <button class="card__inner" data-lightbox="assets/images/project_1_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_1_1.jpeg" alt="Commercial Interiors" loading="lazy" />
-            <div class="card__overlay">
-              <h3>Galaxy Blue Sapphire Plaza</h3>
-              <p>Commercial • 525 sq.ft</p>
-            </div>
-          </button>
-        </article>
-
-        <article class="card reveal" data-cat="residential">
-          <button class="card__inner" data-lightbox="assets/images/project_2_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_2_1.jpeg" alt="Residential" loading="lazy" />
-            <div class="card__overlay">
-              <h3>ELITE HOMZ TILE & FAÇADE Repair Work</h3>
-              <p>Residential • TILE Work</p>
-            </div>
-          </button>
-        </article>
-
-        <article class="card reveal" data-cat="interior">
-          <button class="card__inner" data-lightbox="assets/images/project_3_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_3_1.jpeg" alt="woodland shop interior" loading="lazy" />
-            <div class="card__overlay">
-              <h3>woodland Shop</h3>
-              <p>Interiors • Shop Interior</p>
-            </div>
-          </button>
-        </article>
-
-      </div>
+      <div class="grid" id="gallery" aria-live="polite"></div>
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Project image viewer">
-      <button class="lightbox__close" aria-label="Close">×</button>
-      <img class="lightbox__img" alt="" />
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project image viewer">
+      <div class="lightbox__content" tabindex="-1">
+        <button class="lightbox__close" type="button" aria-label="Close gallery">×</button>
+        <div class="lightbox__media">
+          <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image">‹</button>
+          <img class="lightbox__img" alt="" />
+          <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image">›</button>
+        </div>
+        <div class="lightbox__meta">
+          <span class="lightbox__title"></span>
+          <span class="lightbox__counter" aria-live="polite"></span>
+        </div>
+      </div>
     </div>
   </section>
 
