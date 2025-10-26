@@ -122,7 +122,7 @@ cards.forEach(card=>{
   }).addTo(map);
 
   const marker = L.marker([lat, lng]).addTo(map);
-  marker.bindPopup(`<strong>Yuvaan Constructions & Interiors</strong><br/>We’d love to host you!`).openPopup();
+  marker.bindPopup(`<strong>Yuvaan Constructions </strong><br/>We’d love to host you!`).openPopup();
 })();
 
 /* ===== Smooth internal scroll (accessibility-friendly) ===== */
