@@ -107,44 +107,26 @@
       </div>
 
       <div class="grid" id="gallery">
-        <!-- Cards -->
-        <article class="card reveal" data-cat="commercial">
-          <button class="card__inner" data-lightbox="assets/images/project_1_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_1_1.jpeg" alt="Commercial Interiors" loading="lazy" />
-            <div class="card__overlay">
-              <h3>Galaxy Blue Sapphire Plaza</h3>
-              <p>Commercial • 525 sq.ft</p>
-            </div>
-          </button>
-        </article>
-
-        <article class="card reveal" data-cat="residential">
-          <button class="card__inner" data-lightbox="assets/images/project_2_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_2_1.jpeg" alt="Residential" loading="lazy" />
-            <div class="card__overlay">
-              <h3>ELITE HOMZ TILE & FAÇADE Repair Work</h3>
-              <p>Residential • TILE Work</p>
-            </div>
-          </button>
-        </article>
-
-        <article class="card reveal" data-cat="interior">
-          <button class="card__inner" data-lightbox="assets/images/project_3_1.jpeg" aria-label="Open project image">
-            <img src="assets/images/project_3_1.jpeg" alt="woodland shop interior" loading="lazy" />
-            <div class="card__overlay">
-              <h3>woodland Shop</h3>
-              <p>Interiors • Shop Interior</p>
-            </div>
-          </button>
-        </article>
-
+        <!-- Cards populated by JavaScript -->
       </div>
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Project image viewer">
-      <button class="lightbox__close" aria-label="Close">×</button>
-      <img class="lightbox__img" alt="" />
+    <div class="lightbox" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1" aria-label="Project gallery viewer">
+      <div class="lightbox__content" role="document">
+        <button type="button" class="lightbox__close" aria-label="Close project gallery">×</button>
+        <div class="lightbox__body">
+          <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">‹</button>
+          <figure class="lightbox__figure">
+            <img class="lightbox__img" alt="" />
+            <figcaption class="lightbox__caption">
+              <div class="lightbox__title"></div>
+              <div class="lightbox__counter" aria-live="polite">0 / 0</div>
+            </figcaption>
+          </figure>
+          <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next image">›</button>
+        </div>
+      </div>
     </div>
   </section>
 
